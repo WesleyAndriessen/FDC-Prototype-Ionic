@@ -13,7 +13,7 @@ export class HomePage {
 
     constructor(private http: HttpClient) { }
     allForms = null;
-    route = 'http://6f9297dc42e5.ngrok.io';
+    route = 'http://9eda17f09dd8.ngrok.io';
 
     public onClickGet() {
         this.http.get(this.route + '/api/Sync/GetForms').subscribe((data: Form[]) =>
