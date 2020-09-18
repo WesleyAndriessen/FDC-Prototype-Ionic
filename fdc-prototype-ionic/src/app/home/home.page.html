@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Ionic Prototype
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="medium">Ionic Prototype</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <div id="container">
+        <strong>Please fill in the form!</strong>
+        <br />
+        <ion-item>
+            <ion-label>Name:</ion-label>
+            <ion-input #name placeholder="Enter Name"></ion-input>
+        </ion-item>
+        <br />
+        <ion-item>
+            <ion-label position="floating">Message:</ion-label>
+            <ion-textarea #message placeholder="Enter message"></ion-textarea>
+        </ion-item>
+        <br />
+        <ion-button (click)="onClickSave(name.value, message.value)">Save Form</ion-button>
+        <ion-button (click)="onClickSync()">Sync Form</ion-button><br/>
+        <ion-button (click)="onClickClear()">Clear Forms</ion-button>
+        <ion-button (click)="onClickGet()">Get Forms</ion-button>
+        <br />
+        <br />
+        <ion-label *ngIf="allForms?.length>0">Forms:</ion-label>
+        <ion-list *ngFor="let form of allForms">
+            <ion-item>{{form.name}}: {{form.message}}</ion-item>
+        </ion-list>
+    </div>
+</ion-content>
